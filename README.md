@@ -1,10 +1,10 @@
 # gd-vendas-infoproduto
 
-Skill do Claude Code com o conhecimento comum para ler webhooks de vendas de infoproduto (Hotmart, Kiwify,
-Greenn) e mandar Compras à Meta. Usada pelos apps Pixel.Afilic e Zap.Afilic e por qualquer projeto novo.
+Skill do Claude Code com o conhecimento comum para ler webhooks de vendas de infoproduto (Hotmart e Kiwify)
+e mandar Compras à Meta. Usada pelos apps Pixel.Afilic e Zap.Afilic e por qualquer projeto novo.
 
 - `SKILL.md`: regras de ouro, vocabulário único de eventos e onde está cada detalhe.
-- `referencias/`: uma página por plataforma (Hotmart, Kiwify, Greenn) e como criar produto na Kiwify.
+- `referencias/`: uma página por plataforma (Hotmart e Kiwify) e como criar produto na Kiwify.
 - `exemplos/`: avisos reais com os dados pessoais trocados, para testes. **Nunca** salve aqui um aviso com
   e-mail, telefone, CPF ou nome de cliente de verdade.
 

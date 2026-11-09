@@ -1,6 +1,6 @@
 ---
 name: gd-vendas-infoproduto
-description: Como ler e tratar webhooks de vendas de infoproduto (Hotmart, Kiwify, Greenn) — eventos, Pix × boleto, reembolso, order bump, comissão, rastreio (src/sck/xcod) e envio de Compra à Meta (CAPI). Use sempre que o código receber, interpretar, guardar ou reagir a um aviso de venda dessas plataformas, ou quando um app mostrar/mandar algo errado sobre uma venda (ex.: "Pix virou boleto", "venda reembolsada contando", "produto aparecendo duas vezes"). Use também para criar ou editar produto na Kiwify (planos Padrão/Promo/Order Bump/Afiliado, checkout, links de afiliado, oferta no app) — sempre com questionário antes.
+description: Como ler e tratar webhooks de vendas de infoproduto (Hotmart e Kiwify) — eventos, Pix × boleto, reembolso, order bump, comissão, rastreio (src/sck/xcod) e envio de Compra à Meta (CAPI). Use sempre que o código receber, interpretar, guardar ou reagir a um aviso de venda dessas plataformas, ou quando um app mostrar/mandar algo errado sobre uma venda (ex.: "Pix virou boleto", "venda reembolsada contando", "produto aparecendo duas vezes"). Use também para criar ou editar produto na Kiwify (planos Padrão/Promo/Order Bump/Afiliado, checkout, links de afiliado, oferta no app) — sempre com questionário antes.
 ---
 
 # Vendas de infoproduto: como ler os webhooks
@@ -45,7 +45,7 @@ prática vale para todos: ao corrigir a leitura num app, atualize esta skill (e 
    está o token. **Não** desenhe a lista inteira de eventos (Boleto gerado, Pix gerado, Carrinho abandonado…) com ✓: ocupa a
    tela e confunde. Em passo a passo ou mensagem, pode citar os desmarcados em uma linha, se ajudar.
    Eventos a marcar em cada plataforma: `referencias/<plataforma>.md` (Kiwify confirmada pelo print; Hotmart: nomes
-   usados nos apps, ordem ainda sem print; Greenn: sem estudo).
+   usados nos apps, ordem ainda sem print).
 
 11. **Nome dos planos/ofertas** (padrão do Nilton, 06/11/2026): cada produto com 5 planos — **Padrão - <produto>**
    (link normal), **Promo - <produto>** (recuperação no WhatsApp, dentro da área de membros), **Order Bump - <produto>**
@@ -111,14 +111,15 @@ encerrada · Carrinho abandonado.
 - `referencias/hotmart.md` — campos do webhook 2.0.0, autenticação, Pix/boleto, comissão, order bump,
   reembolso, telefone, renovação, produto renomeado.
 - `referencias/kiwify.md` — eventos, centavos, Pix no campo do boleto, assinatura HMAC, carrinho abandonado.
-- `referencias/greenn.md` — ainda sem aviso real estudado (o que fazer até lá).
+- **Plataformas (decisão do Nilton, 09/11/2026):** só **Kiwify e Hotmart**, as duas com vendas reais. A Greenn saiu da
+  skill por enquanto; se voltar, estude um aviso real antes de escrever o adaptador.
 - Rastreio (src / sck / xcod, ID do visitante) e a Compra na API de Conversões ficam na skill **`gd-pixel-meta`**
   (`referencias/rastreio.md` e `referencias/compra-capi.md` de lá).
 - `exemplos/` — avisos reais com os dados pessoais trocados. Use nos testes.
 
 ## Onde isso está implementado hoje
 
-- Pixel.Afilic (Node/Express, JS): `src/adaptadores/hotmart.js`, `kiwify.js`, `greenn.js`; situação da venda
+- Pixel.Afilic (Node/Express, JS): `src/adaptadores/hotmart.js`, `kiwify.js`; situação da venda
   em `src/painel/vendas.js`; reembolso nas contas em `src/painel/dashboard.js`; produto↔campanha em
   `src/produto-campanha.js`.
 - Zap.Afilic (Next/Prisma, TS): `src/lib/sales/hotmart.ts`, `kiwify.ts`, `types.ts` (formato `SalesEvent`),
@@ -134,7 +135,7 @@ encerrada · Carrinho abandonado.
   contatos antigos gravados em maiúsculas.
 - Zap.Afilic: vendas Pix antigas já gravadas como `refused` continuam assim no banco (o painel as conta como
   "Cartão recusado"); a correção vale para os avisos novos.
-- Pixel.Afilic: adaptadores da Kiwify e da Greenn só guardam o aviso (não traduzem a venda ainda).
+- Pixel.Afilic: o adaptador da Kiwify só guarda o aviso (não traduz a venda ainda).
 - Feito no Pixel.Afilic (17/10/2026): telefone pronto para a Meta (`telefoneDe` em `src/adaptadores/hotmart.js`,
   DDD separado e 9 a mais; número que não fecha fica vazio), nomes "Pix gerado" / "Boleto gerado" / "Recusada"
   pelo tipo de pagamento (`varianteDe` em `src/painel/layout.js`). Nos avisos reais, 24 de 25 telefones já vêm com
