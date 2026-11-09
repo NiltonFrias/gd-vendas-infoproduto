@@ -8,6 +8,20 @@ Exemplo completo: `../exemplos/hotmart-aprovado-pix.json`.
   Na versão 1 ele vinha no corpo (`hottok`). Compare em tempo constante.
 - Um mesmo endereço recebe todos os produtos da conta: identifique o produto por `data.product.id`.
 
+## Configurar na Hotmart (quais eventos marcar)
+
+Caminho: **Ferramentas → Webhook (versão 2.0)** → cadastrar o endereço do app → copiar o **hottok**.
+
+- **Área de membros** (liberar e tirar acesso): Compra aprovada, Compra completa, Reembolso, Chargeback, **Pedido de
+  reembolso** e Cancelamento de assinatura. Esqueceu o Pedido de reembolso? O acesso só cai quando o reembolso sai.
+- **Apps de vendas/rastreio** (Pixel, WhatsApp): todos os de compra, inclusive Boleto/Pix impresso
+  (`PURCHASE_BILLET_PRINTED`), Compra cancelada, Compra atrasada, Abandono de carrinho e Compra expirada.
+- Texto pronto da tela (área de membros), dentro de "Como configurar na Hotmart" recolhido: *Na Hotmart:
+  **Ferramentas → Webhook (versão 2.0)**. Cole o endereço acima e marque **Compra aprovada, Compra completa, Reembolso,
+  Chargeback, Pedido de reembolso e Cancelamento de assinatura**. Copie o **hottok** e cole aqui embaixo.*
+- A ordem dos eventos na tela da Hotmart ainda não foi conferida por print (regra 10 do SKILL.md). Quando tiver o print,
+  ponha os eventos aqui na ordem da tela.
+
 ## Estrutura principal
 
 ```

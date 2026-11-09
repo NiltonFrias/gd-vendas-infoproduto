@@ -38,10 +38,14 @@ prática vale para todos: ao corrigir a leitura num app, atualize esta skill (e 
    Para chamar pelo primeiro nome numa mensagem, use a primeira palavra já tratada. Referência:
    `nomeProprio` em `src/util.js` do Pixel.Afilic (com testes em `test/hotmart.test.js`).
 
-10. **Ao dizer quais eventos marcar no webhook, siga a ORDEM DA TELA da plataforma** (pedido do Nilton, 06/11/2026):
-   liste de cima para baixo como aparecem lá, com ✓ nos que marcar e os outros apagados, para a pessoa ir descendo e
-   marcando sem procurar. Vale para texto de tela, passo a passo e mensagem. Ordem de cada plataforma em
-   `referencias/<plataforma>.md` (Kiwify confirmada; Hotmart e Greenn: esperando o print do Nilton).
+10. **Ao dizer quais eventos marcar no webhook, cite só os que marcar, na ORDEM DA TELA da plataforma** (Nilton,
+   06/11/2026; enxugado em 07/11/2026 no FluxoPost e levado ao Criativos do Reino em 09/11/2026): a pessoa vai descendo e
+   marcando sem procurar. **Na tela do app**, isso fica num "Como configurar na <plataforma>" **recolhido** (`ajuda()` da
+   skill `gd-layout-apps`), numa frase só: onde clicar → "marque só: A, B, C… Os outros eventos ficam desmarcados" → onde
+   está o token. **Não** desenhe a lista inteira de eventos (Boleto gerado, Pix gerado, Carrinho abandonado…) com ✓: ocupa a
+   tela e confunde. Em passo a passo ou mensagem, pode citar os desmarcados em uma linha, se ajudar.
+   Eventos a marcar em cada plataforma: `referencias/<plataforma>.md` (Kiwify confirmada pelo print; Hotmart: nomes
+   usados nos apps, ordem ainda sem print; Greenn: sem estudo).
 
 11. **Nome dos planos/ofertas** (padrão do Nilton, 06/11/2026): cada produto com 5 planos — **Padrão - <produto>**
    (link normal), **Promo - <produto>** (recuperação no WhatsApp, dentro da área de membros), **Order Bump - <produto>**

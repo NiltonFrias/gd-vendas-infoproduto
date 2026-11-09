@@ -108,3 +108,8 @@ Na tela "Criar webhook" da Kiwify, de cima para baixo: Boleto gerado · Pix gera
 "Assinatura renovada" é a garantia (pedido do Nilton, 06/11/2026): no Criativos do Reino ela só empurra o vencimento para a
 próxima cobrança (`Subscription.next_payment` + folga), sem somar dias, então repetir não estraga. Apps de vendas/rastreio (Pixel.Afilic, Zap.Afilic) usam
 mais (Pix e boleto gerados, carrinho abandonado, recusada): diga sempre nessa ordem.
+
+Texto pronto da tela (área de membros; `COMO.kiwify` no FluxoPost e no Criativos do Reino), dentro de "Como configurar na
+Kiwify" recolhido: *Na Kiwify: **Apps → Webhooks → Criar webhook**. Cole o endereço acima, escolha o produto (ou todos) e
+marque só: **Compra aprovada, Reembolso, Chargeback, Assinatura cancelada e Assinatura renovada**. Os outros eventos ficam
+desmarcados. Salve, copie o **token** que a Kiwify mostra e cole aqui embaixo.*
