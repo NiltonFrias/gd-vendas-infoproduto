@@ -1,0 +1,117 @@
+{
+  "id": "00000000-0000-4000-8000-000000000001",
+  "creation_date": 1791853650183,
+  "event": "PURCHASE_APPROVED",
+  "version": "2.0.0",
+  "data": {
+    "product": {
+      "id": 8647293,
+      "ucode": "fbc9e1f7-dd19-420c-9de0-fc7ffa314848",
+      "name": "Kit Editável Gospel App",
+      "warranty_date": "2026-10-19T00:00:00Z",
+      "support_email": "",
+      "has_co_production": false,
+      "is_physical_product": false,
+      "product_format_id": 8
+    },
+    "affiliates": [
+      {
+        "affiliate_code": "",
+        "name": ""
+      }
+    ],
+    "buyer": {
+      "email": "comprador.exemplo@example.com",
+      "ucode": "00000000-0000-4000-8000-000000000002",
+      "name": "Fulano Exemplo da Silva",
+      "first_name": "Fulano",
+      "last_name": "Silva",
+      "checkout_phone_code": "11",
+      "checkout_phone": "11999990000",
+      "address": {
+        "city": "",
+        "country": "Brasil",
+        "country_iso": "BR",
+        "zipcode": "",
+        "address": "",
+        "complement": ""
+      },
+      "document": "00000000000",
+      "document_type": "CPF"
+    },
+    "producer": {
+      "name": "EMPRESA EXEMPLO LTDA",
+      "document": "00000000000100",
+      "legal_nature": "Pessoa Jurídica"
+    },
+    "commissions": [
+      {
+        "value": 7.23,
+        "source": "MARKETPLACE",
+        "currency_value": "BRL"
+      },
+      {
+        "value": 40.67,
+        "source": "PRODUCER",
+        "currency_value": "BRL"
+      }
+    ],
+    "purchase": {
+      "approved_date": 1791853640000,
+      "full_price": {
+        "value": 47.9,
+        "currency_value": "BRL"
+      },
+      "price": {
+        "value": 47.9,
+        "currency_value": "BRL"
+      },
+      "checkout_country": {
+        "name": "Brasil",
+        "iso": "BR"
+      },
+      "order_bump": {
+        "is_order_bump": false
+      },
+      "origin": {
+        "src": "CTZ-BR-26-OUT",
+        "sck": "A7",
+        "xcod": "FBhQwK21wXxRCTZ-BR-26-OUT|120249829398870074hQwK21wXxRC7|120249867475940074hQwK21wXxRA7|120249867476140074hQwK21wXxRInstagram_Reels"
+      },
+      "original_offer_price": {
+        "value": 47.9,
+        "currency_value": "BRL"
+      },
+      "order_date": 1791853540000,
+      "status": "APPROVED",
+      "transaction": "HP0000000001",
+      "payment": {
+        "installments_number": 1,
+        "type": "PIX_AUTOMATIC",
+        "pix_qrcode": "https://customer-local-latam.ebanx.com/pix/checkout?hash=0000000000000000000000000000000000000000000000000",
+        "pix_code": "00020101021226740014br.gov.bcb.pix2552pix.ebanx.com/qr/v2/00000000000000000000000000000000EXEMPLO",
+        "pix_expiration_date": 1792026341000
+      },
+      "offer": {
+        "code": "9gyrh238",
+        "description": "Plano Padrão"
+      },
+      "invoice_by": "SELLER",
+      "subscription_anticipation_purchase": false,
+      "date_next_charge": 1823428800000,
+      "recurrence_number": 1,
+      "is_funnel": false,
+      "business_model": "I"
+    },
+    "subscription": {
+      "status": "ACTIVE",
+      "plan": {
+        "id": 1401880,
+        "name": "Brasil Padrão"
+      },
+      "subscriber": {
+        "code": "XXXXXXXX"
+      }
+    }
+  }
+}
